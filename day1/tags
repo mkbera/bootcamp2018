@@ -1,0 +1,132 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+BLOCK_REWARD	blockchain.cpp	/^const int BLOCK_REWARD      = 100;$/;"	v
+CPPFLAGS	Makefile	/^    CPPFLAGS:=-Wall -Werror -O3 -std=c++14$/;"	m
+CPPFLAGS	Makefile	/^    CPPFLAGS:=-Wall -Werror -g -std=c++14$/;"	m
+MAX_KEY_FILES	cryptotest.cpp	/^const int MAX_KEY_FILES = 10000;$/;"	v
+MAX_TRANSACTIONS	blockchain.cpp	/^const int MAX_TRANSACTIONS  = 64;$/;"	v
+SIZE	crypto.cpp	/^const int hash_result_t::SIZE = SHA256_DIGEST_LENGTH;$/;"	m	class:hash_result_t	file:
+SIZE	crypto.h	/^    static const int SIZE;$/;"	m	class:hash_result_t
+_CRYPTO_H_DEFINED_	crypto.h	2;"	d
+__BLOCKCHAIN_H_DEFINED__	blockchain.h	2;"	d
+__TRANSACTION_H_DEFINED__	transaction.h	2;"	d
+_createDERBuffer	crypto.cpp	/^void rsa_public_key_t::_createDERBuffer()$/;"	f	class:rsa_public_key_t
+add_transaction	blockchain.cpp	/^bool block_t::add_transaction(std::shared_ptr<txn_t> tx, bool check_tx)$/;"	f	class:block_t
+amount	transaction.h	/^    uint64_t amount; $/;"	m	struct:txn_t
+argument_type	crypto.h	/^        typedef hash_result_t argument_type;$/;"	t	struct:std::hash
+balance_available	transaction.cpp	/^bool txn_t::balance_available(const balance_map_t& balances) const$/;"	f	class:txn_t
+balance_map_size	blockchain.h	/^inline size_t balance_map_size(const balance_map_t& bals) {$/;"	f
+balance_map_t	transaction.h	/^typedef std::map<hash_result_t, uint64_t> balance_map_t;$/;"	t
+balance_maps_equal	readindexed.cpp	/^bool balance_maps_equal(const balance_map_t& m1, const balance_map_t& m2)$/;"	f
+balances	blockchain.h	/^    balance_map_t balances;$/;"	m	class:block_t
+blk_hash	blockchain.h	/^    hash_result_t blk_hash;$/;"	m	class:block_t
+block_map_t	blockchain.h	/^typedef std::unordered_map<hash_result_t, std::shared_ptr<block_t> > block_map_t;$/;"	t
+block_t	blockchain.cpp	/^block_t::block_t()$/;"	f	class:block_t
+block_t	blockchain.cpp	/^block_t::block_t(std::shared_ptr<block_t> prev)$/;"	f	class:block_t
+block_t	blockchain.h	/^class block_t {$/;"	c
+bytes	crypto.h	/^    uint8_t bytes[SHA256_DIGEST_LENGTH];$/;"	m	class:hash_result_t
+change_addr	transaction.h	/^    hash_result_t change_addr;$/;"	m	struct:txn_t
+check_signature	cryptotest.cpp	/^int check_signature()$/;"	f
+compute_block_hash	blockchain.cpp	/^void block_t::compute_block_hash(hash_result_t& hash_result)$/;"	f	class:block_t
+create_from_DER	crypto.cpp	/^rsa_private_key_t* rsa_private_key_t::create_from_DER(const char* filename)$/;"	f	class:rsa_private_key_t
+create_from_DER	crypto.cpp	/^rsa_public_key_t* rsa_public_key_t::create_from_DER(const char* filename)$/;"	f	class:rsa_public_key_t
+create_from_PEM	crypto.cpp	/^rsa_private_key_t* rsa_private_key_t::create_from_PEM(const char* filename)$/;"	f	class:rsa_private_key_t
+create_from_PEM	crypto.cpp	/^rsa_public_key_t* rsa_public_key_t::create_from_PEM(const char* filename)$/;"	f	class:rsa_public_key_t
+crypto_finalize	crypto.cpp	/^void crypto_finalize()$/;"	f
+crypto_init	crypto.cpp	/^void crypto_init()$/;"	f
+data	crypto.h	/^    const uint8_t* data() const { return bytes; }$/;"	f	class:hash_result_t
+data	crypto.h	/^    uint8_t* data() { return bytes; }$/;"	f	class:hash_result_t
+dest_addr	transaction.h	/^    hash_result_t dest_addr;$/;"	m	struct:txn_t
+extractHeader	readindexed.cpp	/^size_t extractHeader($/;"	f
+gen_random_string	cryptotest.cpp	/^std::string gen_random_string(size_t n)$/;"	f
+generate_rsa_keys	crypto.cpp	/^keypair_t generate_rsa_keys(int bits, unsigned e)$/;"	f
+get_balances	blockchain.h	/^    const balance_map_t& get_balances() const {$/;"	f	class:block_t
+hash	crypto.h	/^    template<> struct hash<hash_result_t>$/;"	s	namespace:std
+hash_result_t	crypto.cpp	/^hash_result_t::hash_result_t()$/;"	f	class:hash_result_t
+hash_result_t	crypto.cpp	/^hash_result_t::hash_result_t(const hash_result_t& other)$/;"	f	class:hash_result_t
+hash_result_t	crypto.cpp	/^hash_result_t::hash_result_t(uint8_t bytesIn[SIZE])$/;"	f	class:hash_result_t
+hash_result_t	crypto.h	/^class hash_result_t {$/;"	c
+included_in	readindexed.cpp	/^bool included_in(const balance_map_t& m1, const balance_map_t& m2)$/;"	f
+is_coinbase	blockchain.cpp	/^bool block_t::is_coinbase() const$/;"	f	class:block_t
+keyDER	crypto.h	/^    uint8_vector_t keyDER;$/;"	m	struct:rsa_public_key_t
+keypair_t	crypto.h	/^typedef std::pair<rsa_private_key_t*, rsa_public_key_t*> keypair_t;$/;"	t
+keys_gen	cryptotest.cpp	/^int keys_gen = 0;$/;"	v
+length	blockchain.h	/^    unsigned length;$/;"	m	class:block_t
+main	cryptotest.cpp	/^int main()$/;"	f
+main	readchain.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	readindexed.cpp	/^int main(int argc, char* argv[])$/;"	f
+main	rewritechain.cpp	/^int main(int argc, char* argv[])$/;"	f
+mutate	cryptotest.cpp	/^std::string mutate(const std::string& text)$/;"	f
+operator !=	crypto.h	/^    bool operator!=(const hash_result_t& other) const {$/;"	f	class:hash_result_t
+operator <	crypto.cpp	/^bool hash_result_t::operator<(const hash_result_t& other) const$/;"	f	class:hash_result_t
+operator <<	crypto.cpp	/^std::ostream& operator<<(std::ostream& out, const hash_result_t& hash)$/;"	f
+operator <<	transaction.cpp	/^std::ostream& operator<<(std::ostream& out, const balance_map_t& bmap)$/;"	f
+operator <<	transaction.cpp	/^std::ostream& operator<<(std::ostream& out, const txn_t& txn)$/;"	f
+operator =	crypto.h	/^    hash_result_t& operator=(const hash_result_t& other) {$/;"	f	class:hash_result_t
+operator ==	crypto.cpp	/^bool hash_result_t::operator==(const hash_result_t& other) const$/;"	f	class:hash_result_t
+operator []	crypto.h	/^    uint8_t operator[](unsigned i) const {$/;"	f	class:hash_result_t
+operator []	crypto.h	/^    uint8_t& operator[](unsigned i) {$/;"	f	class:hash_result_t
+prev_block	blockchain.h	/^    std::shared_ptr<block_t> prev_block;$/;"	m	class:block_t
+prev_hash	blockchain.h	/^    hash_result_t prev_hash;$/;"	m	class:block_t
+privateKey	crypto.h	/^    EVP_PKEY* privateKey;$/;"	m	struct:rsa_private_key_t
+publicKey	crypto.h	/^    EVP_PKEY* publicKey;$/;"	m	struct:rsa_public_key_t
+public_key	transaction.h	/^    uint8_vector_t public_key;$/;"	m	struct:txn_t
+read	blockchain.cpp	/^bool block_t::read(std::istream& in, const block_map_t& bmap)$/;"	f	class:block_t
+read	blockchain.cpp	/^size_t block_t::read(uint8_t* data, size_t blkSz, const block_map_t& bmap)$/;"	f	class:block_t
+read	transaction.cpp	/^bool txn_t::read(std::istream& in)$/;"	f	class:txn_t
+read	transaction.cpp	/^size_t txn_t::read(uint8_t* buffer, size_t bufsz)$/;"	f	class:txn_t
+readBinaryBytes	crypto.cpp	/^std::shared_ptr< uint8_vector_t > readBinaryBytes(const char* filename)$/;"	f
+readChunk	readindexed.cpp	/^int readChunk($/;"	f
+readText	crypto.cpp	/^std::string readText(const char* filename)$/;"	f
+read_balance_map	blockchain.cpp	/^bool read_balance_map(std::istream& in, balance_map_t& bals)$/;"	f
+read_balance_map	blockchain.cpp	/^void read_balance_map(uint8_t* data, balance_map_t& bals)$/;"	f
+recompute_length	blockchain.cpp	/^void block_t::recompute_length()$/;"	f	class:block_t
+reset_balances	blockchain.cpp	/^void block_t::reset_balances()$/;"	f	class:block_t
+result_type	crypto.h	/^        typedef size_t result_type;$/;"	t	struct:std::hash
+reward_addr	blockchain.h	/^    hash_result_t reward_addr;$/;"	m	class:block_t
+rewrite_chain	rewritechain.cpp	/^bool rewrite_chain(block_map_t& bmap, std::shared_ptr<block_t> tip, $/;"	f
+rsa	crypto.h	/^    RSA* rsa;$/;"	m	struct:rsa_private_key_t
+rsa	crypto.h	/^    RSA* rsa;$/;"	m	struct:rsa_public_key_t
+rsa_private_key_t	crypto.cpp	/^rsa_private_key_t::rsa_private_key_t(RSA* rsa_in)$/;"	f	class:rsa_private_key_t
+rsa_private_key_t	crypto.cpp	/^rsa_private_key_t::rsa_private_key_t(const std::string& text)$/;"	f	class:rsa_private_key_t
+rsa_private_key_t	crypto.cpp	/^rsa_private_key_t::rsa_private_key_t(const uint8_t* der, size_t derSz)$/;"	f	class:rsa_private_key_t
+rsa_private_key_t	crypto.h	/^struct rsa_private_key_t {$/;"	s
+rsa_public_key_t	crypto.cpp	/^rsa_public_key_t::rsa_public_key_t(const std::string& text)$/;"	f	class:rsa_public_key_t
+rsa_public_key_t	crypto.cpp	/^rsa_public_key_t::rsa_public_key_t(const uint8_t* der, size_t derSz)$/;"	f	class:rsa_public_key_t
+rsa_public_key_t	crypto.h	/^struct rsa_public_key_t {$/;"	s
+set_balances	blockchain.h	/^    void set_balances(const balance_map_t& bals) {$/;"	f	class:block_t
+set_hash	blockchain.cpp	/^void block_t::set_hash()$/;"	f	class:block_t
+set_hash_from_data	crypto.cpp	/^void hash_result_t::set_hash_from_data(const uint8_t* data, size_t sz)$/;"	f	class:hash_result_t
+set_hash_from_data	crypto.cpp	/^void hash_result_t::set_hash_from_data(const uint8_vector_t& data)$/;"	f	class:hash_result_t
+set_prev_block	blockchain.h	/^    void set_prev_block(std::shared_ptr<block_t> prev_blk) {$/;"	f	class:block_t
+sha256	crypto.cpp	/^void sha256(const uint8_t* data, size_t sz, unsigned char hash[SHA256_DIGEST_LENGTH])$/;"	f
+sign	crypto.cpp	/^void rsa_private_key_t::sign($/;"	f	class:rsa_private_key_t
+size	blockchain.cpp	/^size_t block_t::size() const$/;"	f	class:block_t
+size	crypto.h	/^    size_t size() const { return SIZE; }$/;"	f	class:hash_result_t
+size	transaction.cpp	/^size_t txn_t::size() const$/;"	f	class:txn_t
+source_addr	transaction.h	/^    hash_result_t source_addr;$/;"	m	struct:txn_t
+std	crypto.h	/^namespace std {$/;"	n
+transactions	blockchain.h	/^    std::vector< std::shared_ptr<txn_t> > transactions;$/;"	m	class:block_t
+tx_hash	transaction.h	/^    hash_result_t tx_hash;$/;"	m	struct:txn_t
+tx_sign	transaction.h	/^    uint8_vector_t tx_sign;$/;"	m	struct:txn_t
+txn_t	transaction.cpp	/^txn_t::txn_t($/;"	f	class:txn_t
+txn_t	transaction.cpp	/^txn_t::txn_t()$/;"	f	class:txn_t
+txn_t	transaction.cpp	/^txn_t::txn_t(const uint8_vector_t& pubKey, const hash_result_t& src_addr,$/;"	f	class:txn_t
+txn_t	transaction.cpp	/^txn_t::txn_t(std::istream& in)$/;"	f	class:txn_t
+txn_t	transaction.h	/^struct txn_t {$/;"	s
+uint8_vector_t	crypto.h	/^typedef std::vector<uint8_t> uint8_vector_t;$/;"	t
+update_balances	transaction.cpp	/^void txn_t::update_balances(balance_map_t& balances) const$/;"	f	class:txn_t
+valid	blockchain.h	/^    bool valid;$/;"	m	class:block_t
+valid	transaction.h	/^    bool valid;$/;"	m	struct:txn_t
+validate	blockchain.cpp	/^bool block_t::validate()$/;"	f	class:block_t
+validate	transaction.cpp	/^bool txn_t::validate() $/;"	f	class:txn_t
+verify	crypto.cpp	/^bool rsa_public_key_t::verify($/;"	f	class:rsa_public_key_t
+write	blockchain.cpp	/^bool block_t::write(std::ostream& out)$/;"	f	class:block_t
+write	transaction.cpp	/^bool txn_t::write(std::ostream& out) const$/;"	f	class:txn_t
+write_balance_map	blockchain.cpp	/^bool write_balance_map(std::ostream& out, const balance_map_t& bals)$/;"	f
+~rsa_private_key_t	crypto.cpp	/^rsa_private_key_t::~rsa_private_key_t()$/;"	f	class:rsa_private_key_t
+~rsa_public_key_t	crypto.cpp	/^rsa_public_key_t::~rsa_public_key_t()$/;"	f	class:rsa_public_key_t
