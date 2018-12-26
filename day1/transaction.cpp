@@ -65,9 +65,28 @@ txn_t::txn_t(
 }
 
 bool txn_t::validate() 
-{
+{   
+    // SHA(public key) = source address
+    uint8_t pub_key_hash[SHA256_DIGEST_LENGTH];
+    sha256((const uint8_t*) public_key.data(), public_key.size(), pub_key_hash);
+    bool heq1 = check_if_hashes_equal(pub_key_hash, source_addr.data());
+
+    // SHA(public_key, source_addr, dest_addr, change_addr) = tx_hash
+    uint8_t check_tx_hash[SHA256_DIGEST_LENGTH];
+    sha256_tx_verify(public_key.data(), public_key.size(),
+        source_addr.data(), source_addr.size(),
+        dest_addr.data(), dest_addr.size(),
+        change_addr.data(), change_addr.size(),
+        amount, check_tx_hash);
+    bool heq2 = check_if_hashes_equal(check_tx_hash, tx_hash.data());
+
+    // sign(tx_hash, tx_sign, public_key) is valid
+    rsa_public_key_t pubKey (public_key.data(), public_key.size());
+    bool ver = pubKey.verify((const uint8_t*) tx_hash.data(), tx_hash.size(), tx_sign.data(), tx_sign.size());
+    std::cout << heq1 << ' '<<heq2 << ' '<<ver << std::endl;
+    return (heq1 && heq2 && ver);
     // TODO: implement this.
-    return true;
+    // return true;
 }
 
 bool txn_t::balance_available(const balance_map_t& balances) const
