@@ -82,37 +82,62 @@ void check_compute_block_hash(std::vector< std::shared_ptr<txn_t> >& transaction
 }
 
 
+bool check_if_hashes_equal_1(uint8_t h1[SHA256_DIGEST_LENGTH], uint8_t h2[SHA256_DIGEST_LENGTH])
+{
+    bool result = true;
+    for(unsigned i=0; i != SHA256_DIGEST_LENGTH; i++) {
+        result = result && (h1[i] == h2[i]);
+        // result = (h1[i] == h2[i]);
+        // if (result == true) std::cout << "TEST";
+        // if (result != true) return false;
+    }
+    // std::cout<< std::endl;
+    return result;
+}
+
+
 bool block_t::validate()
 {
     // create balances array.
     reset_balances();
     // TODO: replace the call to the helper with your own code.
-    valid = validate_block_helper(
-                transactions, balances, prev_hash, reward_addr, blk_hash, BLOCK_REWARD);
+    // valid = validate_block_helper(
+    //             transactions, balances, prev_hash, reward_addr, blk_hash, BLOCK_REWARD);
     
-    // // check each transaction validate
-    // bool all_tx_valid = true;
-    // for (unsigned t=0; t < transactions.size(); t++) {
-    //     all_tx_valid = all_tx_valid && transactions[t]->validate();
-    // }
+    // check each transaction validate
+    bool all_tx_valid = true;
+    for (unsigned t=0; t < transactions.size(); t++) {
+        all_tx_valid = all_tx_valid && transactions[t]->validate();
+    }
 
-    // // update balances after each valid transaction
-    // for (unsigned t=0; t < transactions.size(); t++) {
-    //     transactions[t]->update_balances(balances);
-    // }
+    if(all_tx_valid != true){
+        valid = false;
+        return false;
+    }
 
-    // // check blk hash
-    // uint8_t check_blk_hash[SHA256_DIGEST_LENGTH];
-    // check_compute_block_hash(transactions, 
-    //     reward_addr.data(), reward_addr.size(),
-    //     prev_hash.data(), prev_hash.size(),
-    //     check_blk_hash);
-    // bool block_hash_valid = check_if_hashes_equal(check_blk_hash, blk_hash.data());
+    // update balances after each valid transaction
+    for (unsigned t=0; t < transactions.size(); t++) {
+        bool balance_avl = transactions[t]->balance_available(balances);
+        if(balance_avl != true) {
+            valid = false;
+            return valid;
+        }
+
+        transactions[t]->update_balances(balances);
+    }
+
+    // check blk hash
+    uint8_t check_blk_hash[SHA256_DIGEST_LENGTH];
+    check_compute_block_hash(transactions, 
+        reward_addr.data(), reward_addr.size(),
+        prev_hash.data(), prev_hash.size(),
+        check_blk_hash);
+    bool block_hash_valid = check_if_hashes_equal_1(check_blk_hash, blk_hash.data());
     
-    // // add block reward to balances
-    // balances[reward_addr] += BLOCK_REWARD;
+    // add block reward to balances
+    balances[reward_addr] += BLOCK_REWARD;
 
-    // valid = all_tx_valid && block_hash_valid;
+    valid = all_tx_valid && block_hash_valid;
     return valid;
 
 }

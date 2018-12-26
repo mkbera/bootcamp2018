@@ -147,14 +147,14 @@ void crypto_finalize();
 void sha256(const uint8_t* data, size_t sz, 
             unsigned char hash[SHA256_DIGEST_LENGTH]);
 
-void sha256_tx_verify(const uint8_t* pub_key_data, size_t pub_key_size, 
-    const uint8_t* src_addr_data, size_t src_addr_size,
-    const uint8_t* dst_addr_data, size_t dst_addr_size,
-    const uint8_t* change_addr_data, size_t change_addr_size,
-    uint64_t amount,
-    unsigned char hash[SHA256_DIGEST_LENGTH]);
+// void sha256_tx_verify(const uint8_t* pub_key_data, size_t pub_key_size, 
+//     const uint8_t* src_addr_data, size_t src_addr_size,
+//     const uint8_t* dst_addr_data, size_t dst_addr_size,
+//     const uint8_t* change_addr_data, size_t change_addr_size,
+//     uint64_t amount,
+//     unsigned char hash[SHA256_DIGEST_LENGTH]);
 
-bool check_if_hashes_equal(uint8_t h1[SHA256_DIGEST_LENGTH], uint8_t h2[SHA256_DIGEST_LENGTH]);
+// bool check_if_hashes_equal(uint8_t h1[SHA256_DIGEST_LENGTH], uint8_t h2[SHA256_DIGEST_LENGTH]);
 
 void print_my_hash(uint8_t h1[SHA256_DIGEST_LENGTH], uint8_t h2[SHA256_DIGEST_LENGTH]);
 

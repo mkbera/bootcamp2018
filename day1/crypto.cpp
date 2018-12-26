@@ -331,36 +331,6 @@ void sha256(const uint8_t* data, size_t sz, unsigned char hash[SHA256_DIGEST_LEN
     SHA256_Final(hash, &sha256);
 }
 
-void sha256_tx_verify(const uint8_t* pub_key_data, size_t pub_key_size, 
-    const uint8_t* src_addr_data, size_t src_addr_size,
-    const uint8_t* dst_addr_data, size_t dst_addr_size,
-    const uint8_t* change_addr_data, size_t change_addr_size,
-    uint64_t amount,
-    unsigned char hash[SHA256_DIGEST_LENGTH])
-{
-    SHA256_CTX sha256;
-    SHA256_Init(&sha256);
-    SHA256_Update(&sha256, pub_key_data, pub_key_size);
-    SHA256_Update(&sha256, src_addr_data, src_addr_size);
-    SHA256_Update(&sha256, dst_addr_data, dst_addr_size);
-    SHA256_Update(&sha256, change_addr_data, change_addr_size);
-    SHA256_Update(&sha256, &amount, sizeof(amount));
-    SHA256_Final(hash, &sha256);
-
-}
-
-bool check_if_hashes_equal(uint8_t h1[SHA256_DIGEST_LENGTH], uint8_t h2[SHA256_DIGEST_LENGTH])
-{
-    bool result = true;
-    for(unsigned i=0; i != SHA256_DIGEST_LENGTH; i++) {
-        result = result && (h1[i] == h2[i]);
-        // result = (h1[i] == h2[i]);
-        // if (result == true) std::cout << "TEST";
-        // if (result != true) return false;
-    }
-    // std::cout<< std::endl;
-    return result;
-}
 
 void print_my_hash(uint8_t h1[SHA256_DIGEST_LENGTH], uint8_t h2[SHA256_DIGEST_LENGTH])
 {
