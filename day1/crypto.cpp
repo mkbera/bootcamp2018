@@ -354,7 +354,11 @@ bool check_if_hashes_equal(uint8_t h1[SHA256_DIGEST_LENGTH], uint8_t h2[SHA256_D
     bool result = true;
     for(unsigned i=0; i != SHA256_DIGEST_LENGTH; i++) {
         result = result && (h1[i] == h2[i]);
+        // result = (h1[i] == h2[i]);
+        // if (result == true) std::cout << "TEST";
+        // if (result != true) return false;
     }
+    // std::cout<< std::endl;
     return result;
 }
 

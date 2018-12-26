@@ -63,6 +63,25 @@ bool validate_block_helper(
     const uint64_t BLOCK_REWARD
 );
 
+
+void check_compute_block_hash(std::vector< std::shared_ptr<txn_t> >& transactions,
+    const uint8_t* reward_addr_data, size_t reward_addr_size,
+    const uint8_t* prev_hash_data, size_t prev_hash_size,
+    unsigned char hash[SHA256_DIGEST_LENGTH]
+)
+{
+    SHA256_CTX sha256;
+    SHA256_Init(&sha256);
+    for (unsigned t=0; t < transactions.size(); t++) {
+        SHA256_Update(&sha256, transactions[t]->tx_hash.data(), transactions[t]->tx_hash.size());
+    }
+    SHA256_Update(&sha256, reward_addr_data, reward_addr_size);
+    SHA256_Update(&sha256, prev_hash_data, prev_hash_size);
+    SHA256_Final(hash, &sha256);
+    
+}
+
+
 bool block_t::validate()
 {
     // create balances array.
@@ -70,7 +89,32 @@ bool block_t::validate()
     // TODO: replace the call to the helper with your own code.
     valid = validate_block_helper(
                 transactions, balances, prev_hash, reward_addr, blk_hash, BLOCK_REWARD);
+    
+    // // check each transaction validate
+    // bool all_tx_valid = true;
+    // for (unsigned t=0; t < transactions.size(); t++) {
+    //     all_tx_valid = all_tx_valid && transactions[t]->validate();
+    // }
+
+    // // update balances after each valid transaction
+    // for (unsigned t=0; t < transactions.size(); t++) {
+    //     transactions[t]->update_balances(balances);
+    // }
+
+    // // check blk hash
+    // uint8_t check_blk_hash[SHA256_DIGEST_LENGTH];
+    // check_compute_block_hash(transactions, 
+    //     reward_addr.data(), reward_addr.size(),
+    //     prev_hash.data(), prev_hash.size(),
+    //     check_blk_hash);
+    // bool block_hash_valid = check_if_hashes_equal(check_blk_hash, blk_hash.data());
+    
+    // // add block reward to balances
+    // balances[reward_addr] += BLOCK_REWARD;
+
+    // valid = all_tx_valid && block_hash_valid;
     return valid;
+
 }
 
 bool block_t::add_transaction(std::shared_ptr<txn_t> tx, bool check_tx)
