@@ -18,7 +18,7 @@ void __lock_acq(char *fname) {
 
 void __lock_rel(char *fname) {
   printf("Lock released: %s\n", fname);
-  numLockAcqs++;
+  // numLockAcqs++;
 }
 
 

@@ -40,6 +40,13 @@
 #include "llvm/Transforms/Utils/EscapeEnumerator.h"
 
 using namespace llvm;
+StringRef FuncEntryName = "__func_entry";
+StringRef FuncExitName = "__func_exit";
+
+// std::string mtx_lock("pthread_mutex_lock");
+// std::string mtx_unlock("pthread_mutex_unlock");
+std::string skip_this("printf");
+
 
 namespace {
 
@@ -64,7 +71,57 @@ StringRef InstrumentFunctions::getPassName() const {
 }
 
 bool InstrumentFunctions::runOnFunction(Function &F) {
-  // TODO: Write your code here
+
+    if (DEBUG) {
+      errs() << "This is a function called: " << F.getName() << "\n"
+             << "This is the function body: " << F << "\n";
+    }
+
+    Module &M = *F.getParent();
+    bool flag = false;
+    StringRef prev_name;
+    for (auto &BB : F) {
+      for (auto &I : BB) {
+        if (flag == true) {
+          flag = false;
+          Function *FuncExit = M.getFunction(FuncExitName);
+          if (!FuncExit) {
+            errs() << "Unknown function referenced\n";
+          }
+          IRBuilder<> IRB(&I);
+          CallInst *call =
+              IRB.CreateCall(FuncExit, IRB.CreateGlobalStringPtr(prev_name));
+        }
+        if (isa<CallInst>(I)) { // Function call inst
+          
+          StringRef name = cast<CallInst>(I).getCalledFunction()->getName();
+          prev_name = cast<CallInst>(I).getCalledFunction()->getName();
+            // errs() << "Function being called: " << name << "\n";
+
+          if (name.str() == skip_this) {
+            if (DEBUG) {
+              errs() << "Mutex lock instruction: " << I << "\n";
+            }
+            continue;
+          }
+
+          Function *FuncEntry = M.getFunction(FuncEntryName);
+          if (!FuncEntry) {
+            errs() << "Unknown function referenced\n";
+          }
+
+          // Insert call before I
+          IRBuilder<> IRB(&I);
+          CallInst *call =
+              IRB.CreateCall(FuncEntry, IRB.CreateGlobalStringPtr(name));
+
+          flag = true;
+
+
+        }
+      }
+    }
+
 
   return true; // Do not change this
 }
