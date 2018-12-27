@@ -41,11 +41,24 @@ struct CountBBinLoops : public FunctionPass {
   virtual bool runOnFunction(Function &F) {
     // TODO: Write your code here. Extend the skeleton code to get the desired
     // result.
+    errs() << "This is a function called:" << F.getName() << "\n";
     LoopInfo &LI = getAnalysis<LoopInfoWrapperPass>().getLoopInfo();
 
-    int loopCounter = 0;
+    int loopCounter = 0, b_b = 0, instr = 0;
     for (LoopInfo::iterator i = LI.begin(), e = LI.end(); i != e; i++) {
       Loop *L = *i; // This gives you a loop handle (e.g., for loop)
+
+  loopCounter += 1;
+  b_b = 0;
+  errs() << "Loop name:" << L->getName() << "\n";
+  for (Loop::block_iterator bb = L->block_begin(); bb != L->block_end(); ++bb) {
+    b_b += 1;
+    instr = 0;
+    for(auto &I : *(*bb))
+      instr +=1 ;
+    errs() << "Basic block name= has " << instr << " instructions." << "\n"; 
+      }
+  errs() << "Number of loops: " << loopCounter << " BBs:" << b_b << "\n";
     }
 
     return false; // Do not change this
