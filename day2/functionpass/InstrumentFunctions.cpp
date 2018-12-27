@@ -79,9 +79,64 @@ bool InstrumentFunctions::runOnFunction(Function &F) {
 
     Module &M = *F.getParent();
     bool flag = false;
+
+    bool main_start = true;
+    bool main_end = false;
+
     StringRef prev_name;
     for (auto &BB : F) {
       for (auto &I : BB) {
+        const char* the_main_man = "main";
+std::string skip_this_2(the_main_man);
+        if(F.getName().str() == skip_this_2) {
+          if (main_start) {
+            main_start = false;
+
+            Function *FuncEntry = M.getFunction(FuncEntryName);
+            if (!FuncEntry) {
+              errs() << "Unknown function referenced\n";
+            }
+
+            // Insert call before I
+            IRBuilder<> IRB(&I);
+            CallInst *call =
+                IRB.CreateCall(FuncEntry, IRB.CreateGlobalStringPtr(F.getName()));
+
+          }
+
+          // ReturnInst ri(&I);
+          // if (ri.getReturnValue()) {
+          //   Function *FuncExit = M.getFunction(FuncExitName);
+          //   if (!FuncExit) {
+          //     errs() << "Unknown function referenced\n";
+          //   }
+
+          //   // Insert call before I
+          //   IRBuilder<> IRB(&I);
+          //   CallInst *call =
+          //       IRB.CreateCall(FuncExit, IRB.CreateGlobalStringPtr(F.getName()));            
+
+          // }
+
+          auto *op = (&I)->getOpcodeName();
+          if ((std::string)op == "ret") {
+            errs() << "marks" << "\n";
+              Function *FuncExit = M.getFunction(FuncExitName);
+            if (!FuncExit) {
+              errs() << "Unknown function referenced\n";
+            }
+
+            // Insert call before I
+            IRBuilder<> IRB(&I);
+            CallInst *call =
+                IRB.CreateCall(FuncExit, IRB.CreateGlobalStringPtr(F.getName()));            
+
+          }
+
+        }
+
+
+
         if (flag == true) {
           flag = false;
           Function *FuncExit = M.getFunction(FuncExitName);
