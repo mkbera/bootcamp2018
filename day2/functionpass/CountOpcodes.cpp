@@ -18,6 +18,7 @@
 #include "llvm/IR/Function.h"
 #include "llvm/Pass.h"
 #include "llvm/Support/raw_ostream.h"
+#include <map>
 
 using namespace llvm;
 
@@ -30,11 +31,44 @@ struct CountOpCodes : public FunctionPass {
 
   CountOpCodes() : FunctionPass(ID) {}
 
-  virtual bool runOnFunction(Function &F) {
-    // TODO: Write your code here
+ bool runOnFunction(Function &F) override {
+ 	std::map<std::string, int> opcodeCounter;
+ 	std::map<std::string, int>::iterator itr;
 
-    return false; // Do not change this
+    for (auto &BB : F) {
+      for (auto &I : BB) {
+      	auto *op = (&I)->getOpcodeName();
+      	opcodeCounter[op] += 1;
+        // if (auto *op = dyn_cast<BinaryOperator>(&I)) {
+        //   // Insert at the point where the instruction `op` appears.
+        //   IRBuilder<> builder(op);
+
+        //   // Make a multiply with the same operands as `op`.
+        //   Value *lhs = op->getOperand(0);
+        //   Value *rhs = op->getOperand(1);
+        //   Value *mul = builder.CreateMul(lhs, rhs);
+
+        //   // Everywhere the old instruction was used as an operand, use our
+        //   // new multiply instruction instead.
+        //   for (auto &U : op->uses()) {
+        //     User *user = U.getUser(); // A User is anything with operands.
+        //     user->setOperand(U.getOperandNo(), mul);
+        //   }
+
+        //   // We modified the code.
+        //   return true;
+        // }
+      }
+    }
+
+    errs() << "Function: " << F.getName() << "\n";
+    for(itr = opcodeCounter.begin(); itr != opcodeCounter.end(); ++itr) {
+    	errs() << itr->first << ": " << itr->second << "\n";
+    }
+    errs() << "\n";
+    return false;
   }
+
 };
 
 char CountOpCodes::ID = 0;
