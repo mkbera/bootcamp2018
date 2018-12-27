@@ -57,19 +57,20 @@ import os
 
 
 # problem 4
-compile_bit = 'clang -o0 -emit-llvm prog9.c -c -o problem4/prog9.bc'
+prog = 10
+compile_bit = 'clang -o0 -emit-llvm prog{}.c -c -o problem4/prog{}.bc'.format(prog, prog)
 os.system(compile_bit)
 
-instrument = 'opt -load ../build/functionpass/libFunctionPass.so -mergereturn -instrfuncs ./problem4/prog9.bc > ./problem4/prog9v2.bc'
+instrument = 'opt -load ../build/functionpass/libFunctionPass.so -mergereturn -instrfuncs ./problem4/prog{}.bc > ./problem4/prog{}v2.bc'.format(prog, prog)
 os.system(instrument)
 
-compile_exe = 'clang problem4/prog9.bc -o problem4/prog9'
+compile_exe = 'clang problem4/prog{}.bc -o problem4/prog{}'.format(prog, prog)
 os.system(compile_exe)
-compile_exev2 = 'clang problem4/prog9v2.bc -o problem4/prog9v2'
+compile_exev2 = 'clang problem4/prog{}v2.bc -o problem4/prog{}v2'.format(prog, prog)
 os.system(compile_exev2)
 
-run = './problem4/prog9'
+run = './problem4/prog{}'.format(prog)
 os.system(run)
 print('---')
-runv2 = './problem4/prog9v2'
+runv2 = './problem4/prog{}v2'.format(prog)
 os.system(runv2)

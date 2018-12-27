@@ -120,7 +120,7 @@ std::string skip_this_2(the_main_man);
 
           auto *op = (&I)->getOpcodeName();
           if ((std::string)op == "ret") {
-            errs() << "marks" << "\n";
+            // errs() << "marks" << "\n";
               Function *FuncExit = M.getFunction(FuncExitName);
             if (!FuncExit) {
               errs() << "Unknown function referenced\n";
