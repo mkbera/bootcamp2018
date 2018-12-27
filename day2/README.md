@@ -35,7 +35,7 @@ cmake ..; make
 
     ```Bash
     clang -O3 -emit-llvm prog3.c -c -o prog3.bc
-    clang -O0 -S -emit-llvm hello.c
+    clang -O0 -S -emit-llvm hello.c -o hello.ll
     ```
 
   + Convert bitcode to executable
@@ -80,7 +80,7 @@ cmake ..; make
 + Execute pass in the shared object (recommended)
 
   ```Bash
-  opt -load ./functionpass/libFunctionPass.so -iteratefuncir ../progs/prog3.bc > /dev/null
+  opt -load ./functionpass/libFunctionPass.so -iteratefuncir ../progs/prog2.bc > /dev/null
   ```
 
 + See help for a pass with string "iterate"

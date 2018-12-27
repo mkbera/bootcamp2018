@@ -1,4 +1,4 @@
-# Install script for directory: /home/ubuntu/bootcamp-2018/day2/functionpass
+# Install script for directory: /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

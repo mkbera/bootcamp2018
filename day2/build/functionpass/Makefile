@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/bootcamp-2018/day2
+CMAKE_SOURCE_DIR = /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/bootcamp-2018/day2/build
+CMAKE_BINARY_DIR = /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/bootcamp-2018/day2/build/CMakeFiles /home/ubuntu/bootcamp-2018/day2/build/functionpass/CMakeFiles/progress.marks
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/bootcamp-2018/day2/build/CMakeFiles 0
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass/CMakeFiles/progress.marks
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/clean
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/preinstall
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/preinstall
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 functionpass/CMakeFiles/FunctionPass.dir/rule:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/CMakeFiles/FunctionPass.dir/rule
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f CMakeFiles/Makefile2 functionpass/CMakeFiles/FunctionPass.dir/rule
 .PHONY : functionpass/CMakeFiles/FunctionPass.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ FunctionPass: functionpass/CMakeFiles/FunctionPass.dir/rule
 
 # fast build rule for target.
 FunctionPass/fast:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/build
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/build
 .PHONY : FunctionPass/fast
 
 CountBBinLoops.o: CountBBinLoops.cpp.o
@@ -131,7 +131,7 @@ CountBBinLoops.o: CountBBinLoops.cpp.o
 
 # target to build an object file
 CountBBinLoops.cpp.o:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o
 .PHONY : CountBBinLoops.cpp.o
 
 CountBBinLoops.i: CountBBinLoops.cpp.i
@@ -140,7 +140,7 @@ CountBBinLoops.i: CountBBinLoops.cpp.i
 
 # target to preprocess a source file
 CountBBinLoops.cpp.i:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.i
 .PHONY : CountBBinLoops.cpp.i
 
 CountBBinLoops.s: CountBBinLoops.cpp.s
@@ -149,7 +149,7 @@ CountBBinLoops.s: CountBBinLoops.cpp.s
 
 # target to generate assembly for a file
 CountBBinLoops.cpp.s:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.s
 .PHONY : CountBBinLoops.cpp.s
 
 CountOpcodes.o: CountOpcodes.cpp.o
@@ -158,7 +158,7 @@ CountOpcodes.o: CountOpcodes.cpp.o
 
 # target to build an object file
 CountOpcodes.cpp.o:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o
 .PHONY : CountOpcodes.cpp.o
 
 CountOpcodes.i: CountOpcodes.cpp.i
@@ -167,7 +167,7 @@ CountOpcodes.i: CountOpcodes.cpp.i
 
 # target to preprocess a source file
 CountOpcodes.cpp.i:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.i
 .PHONY : CountOpcodes.cpp.i
 
 CountOpcodes.s: CountOpcodes.cpp.s
@@ -176,7 +176,7 @@ CountOpcodes.s: CountOpcodes.cpp.s
 
 # target to generate assembly for a file
 CountOpcodes.cpp.s:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.s
 .PHONY : CountOpcodes.cpp.s
 
 DirectCallSite.o: DirectCallSite.cpp.o
@@ -185,7 +185,7 @@ DirectCallSite.o: DirectCallSite.cpp.o
 
 # target to build an object file
 DirectCallSite.cpp.o:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o
 .PHONY : DirectCallSite.cpp.o
 
 DirectCallSite.i: DirectCallSite.cpp.i
@@ -194,7 +194,7 @@ DirectCallSite.i: DirectCallSite.cpp.i
 
 # target to preprocess a source file
 DirectCallSite.cpp.i:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.i
 .PHONY : DirectCallSite.cpp.i
 
 DirectCallSite.s: DirectCallSite.cpp.s
@@ -203,7 +203,7 @@ DirectCallSite.s: DirectCallSite.cpp.s
 
 # target to generate assembly for a file
 DirectCallSite.cpp.s:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.s
 .PHONY : DirectCallSite.cpp.s
 
 InstrumentFunctions.o: InstrumentFunctions.cpp.o
@@ -212,7 +212,7 @@ InstrumentFunctions.o: InstrumentFunctions.cpp.o
 
 # target to build an object file
 InstrumentFunctions.cpp.o:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o
 .PHONY : InstrumentFunctions.cpp.o
 
 InstrumentFunctions.i: InstrumentFunctions.cpp.i
@@ -221,7 +221,7 @@ InstrumentFunctions.i: InstrumentFunctions.cpp.i
 
 # target to preprocess a source file
 InstrumentFunctions.cpp.i:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.i
 .PHONY : InstrumentFunctions.cpp.i
 
 InstrumentFunctions.s: InstrumentFunctions.cpp.s
@@ -230,7 +230,7 @@ InstrumentFunctions.s: InstrumentFunctions.cpp.s
 
 # target to generate assembly for a file
 InstrumentFunctions.cpp.s:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.s
 .PHONY : InstrumentFunctions.cpp.s
 
 InstrumentLocks.o: InstrumentLocks.cpp.o
@@ -239,7 +239,7 @@ InstrumentLocks.o: InstrumentLocks.cpp.o
 
 # target to build an object file
 InstrumentLocks.cpp.o:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o
 .PHONY : InstrumentLocks.cpp.o
 
 InstrumentLocks.i: InstrumentLocks.cpp.i
@@ -248,7 +248,7 @@ InstrumentLocks.i: InstrumentLocks.cpp.i
 
 # target to preprocess a source file
 InstrumentLocks.cpp.i:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.i
 .PHONY : InstrumentLocks.cpp.i
 
 InstrumentLocks.s: InstrumentLocks.cpp.s
@@ -257,7 +257,7 @@ InstrumentLocks.s: InstrumentLocks.cpp.s
 
 # target to generate assembly for a file
 InstrumentLocks.cpp.s:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.s
 .PHONY : InstrumentLocks.cpp.s
 
 IterateFunctionIR.o: IterateFunctionIR.cpp.o
@@ -266,7 +266,7 @@ IterateFunctionIR.o: IterateFunctionIR.cpp.o
 
 # target to build an object file
 IterateFunctionIR.cpp.o:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o
 .PHONY : IterateFunctionIR.cpp.o
 
 IterateFunctionIR.i: IterateFunctionIR.cpp.i
@@ -275,7 +275,7 @@ IterateFunctionIR.i: IterateFunctionIR.cpp.i
 
 # target to preprocess a source file
 IterateFunctionIR.cpp.i:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.i
 .PHONY : IterateFunctionIR.cpp.i
 
 IterateFunctionIR.s: IterateFunctionIR.cpp.s
@@ -284,7 +284,7 @@ IterateFunctionIR.s: IterateFunctionIR.cpp.s
 
 # target to generate assembly for a file
 IterateFunctionIR.cpp.s:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.s
 .PHONY : IterateFunctionIR.cpp.s
 
 MutateOperator.o: MutateOperator.cpp.o
@@ -293,7 +293,7 @@ MutateOperator.o: MutateOperator.cpp.o
 
 # target to build an object file
 MutateOperator.cpp.o:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o
 .PHONY : MutateOperator.cpp.o
 
 MutateOperator.i: MutateOperator.cpp.i
@@ -302,7 +302,7 @@ MutateOperator.i: MutateOperator.cpp.i
 
 # target to preprocess a source file
 MutateOperator.cpp.i:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.i
 .PHONY : MutateOperator.cpp.i
 
 MutateOperator.s: MutateOperator.cpp.s
@@ -311,7 +311,7 @@ MutateOperator.s: MutateOperator.cpp.s
 
 # target to generate assembly for a file
 MutateOperator.cpp.s:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(MAKE) -f functionpass/CMakeFiles/FunctionPass.dir/build.make functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.s
 .PHONY : MutateOperator.cpp.s
 
 # Help Target
@@ -355,6 +355,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

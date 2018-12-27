@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/bootcamp-2018/day2
+CMAKE_SOURCE_DIR = /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/bootcamp-2018/day2/build
+CMAKE_BINARY_DIR = /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build
 
 # Utility rule file for intrinsics_gen.
 
@@ -67,6 +67,6 @@ CMakeFiles/intrinsics_gen.dir/clean:
 .PHONY : CMakeFiles/intrinsics_gen.dir/clean
 
 CMakeFiles/intrinsics_gen.dir/depend:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/bootcamp-2018/day2 /home/ubuntu/bootcamp-2018/day2 /home/ubuntu/bootcamp-2018/day2/build /home/ubuntu/bootcamp-2018/day2/build /home/ubuntu/bootcamp-2018/day2/build/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2 /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2 /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles/intrinsics_gen.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/intrinsics_gen.dir/depend
 

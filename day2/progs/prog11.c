@@ -16,6 +16,12 @@ void __lock_acq(char *fname) {
   numLockAcqs++;
 }
 
+void __lock_rel(char *fname) {
+  printf("Lock released: %s\n", fname);
+  numLockAcqs++;
+}
+
+
 uint32_t counter;
 pthread_mutex_t count_mutex;
 

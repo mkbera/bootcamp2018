@@ -1,6 +1,6 @@
-/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles/edit_cache.dir
-/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles/intrinsics_gen.dir
-/home/ubuntu/bootcamp-2018/day2/build/functionpass/CMakeFiles/edit_cache.dir
-/home/ubuntu/bootcamp-2018/day2/build/functionpass/CMakeFiles/rebuild_cache.dir
-/home/ubuntu/bootcamp-2018/day2/build/functionpass/CMakeFiles/FunctionPass.dir
+/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles/intrinsics_gen.dir
+/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass/CMakeFiles/edit_cache.dir
+/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass/CMakeFiles/rebuild_cache.dir
+/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass/CMakeFiles/FunctionPass.dir

@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/ubuntu/bootcamp-2018/day2
+CMAKE_SOURCE_DIR = /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/ubuntu/bootcamp-2018/day2/build
+CMAKE_BINARY_DIR = /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build
 
 # Include any dependencies generated for this target.
 include functionpass/CMakeFiles/FunctionPass.dir/depend.make
@@ -59,16 +59,16 @@ include functionpass/CMakeFiles/FunctionPass.dir/flags.make
 
 functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o: functionpass/CMakeFiles/FunctionPass.dir/flags.make
 functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o: ../functionpass/IterateFunctionIR.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o -c /home/ubuntu/bootcamp-2018/day2/functionpass/IterateFunctionIR.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o -c /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/IterateFunctionIR.cpp
 
 functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.i"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/day2/functionpass/IterateFunctionIR.cpp > CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/IterateFunctionIR.cpp > CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.i
 
 functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.s"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/day2/functionpass/IterateFunctionIR.cpp -o CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/IterateFunctionIR.cpp -o CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.s
 
 functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o.requires:
 
@@ -83,16 +83,16 @@ functionpass/CMakeFiles/FunctionPass.dir/IterateFunctionIR.cpp.o.provides.build:
 
 functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o: functionpass/CMakeFiles/FunctionPass.dir/flags.make
 functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o: ../functionpass/MutateOperator.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o -c /home/ubuntu/bootcamp-2018/day2/functionpass/MutateOperator.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o -c /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/MutateOperator.cpp
 
 functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FunctionPass.dir/MutateOperator.cpp.i"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/day2/functionpass/MutateOperator.cpp > CMakeFiles/FunctionPass.dir/MutateOperator.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/MutateOperator.cpp > CMakeFiles/FunctionPass.dir/MutateOperator.cpp.i
 
 functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FunctionPass.dir/MutateOperator.cpp.s"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/day2/functionpass/MutateOperator.cpp -o CMakeFiles/FunctionPass.dir/MutateOperator.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/MutateOperator.cpp -o CMakeFiles/FunctionPass.dir/MutateOperator.cpp.s
 
 functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o.requires:
 
@@ -107,16 +107,16 @@ functionpass/CMakeFiles/FunctionPass.dir/MutateOperator.cpp.o.provides.build: fu
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o: functionpass/CMakeFiles/FunctionPass.dir/flags.make
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o: ../functionpass/InstrumentLocks.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o -c /home/ubuntu/bootcamp-2018/day2/functionpass/InstrumentLocks.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o -c /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/InstrumentLocks.cpp
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.i"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/day2/functionpass/InstrumentLocks.cpp > CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/InstrumentLocks.cpp > CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.i
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.s"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/day2/functionpass/InstrumentLocks.cpp -o CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/InstrumentLocks.cpp -o CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.s
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o.requires:
 
@@ -131,16 +131,16 @@ functionpass/CMakeFiles/FunctionPass.dir/InstrumentLocks.cpp.o.provides.build: f
 
 functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o: functionpass/CMakeFiles/FunctionPass.dir/flags.make
 functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o: ../functionpass/CountOpcodes.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o -c /home/ubuntu/bootcamp-2018/day2/functionpass/CountOpcodes.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o -c /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/CountOpcodes.cpp
 
 functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.i"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/day2/functionpass/CountOpcodes.cpp > CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/CountOpcodes.cpp > CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.i
 
 functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.s"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/day2/functionpass/CountOpcodes.cpp -o CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/CountOpcodes.cpp -o CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.s
 
 functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o.requires:
 
@@ -155,16 +155,16 @@ functionpass/CMakeFiles/FunctionPass.dir/CountOpcodes.cpp.o.provides.build: func
 
 functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o: functionpass/CMakeFiles/FunctionPass.dir/flags.make
 functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o: ../functionpass/DirectCallSite.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o -c /home/ubuntu/bootcamp-2018/day2/functionpass/DirectCallSite.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o -c /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/DirectCallSite.cpp
 
 functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.i"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/day2/functionpass/DirectCallSite.cpp > CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/DirectCallSite.cpp > CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.i
 
 functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.s"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/day2/functionpass/DirectCallSite.cpp -o CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/DirectCallSite.cpp -o CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.s
 
 functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o.requires:
 
@@ -179,16 +179,16 @@ functionpass/CMakeFiles/FunctionPass.dir/DirectCallSite.cpp.o.provides.build: fu
 
 functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o: functionpass/CMakeFiles/FunctionPass.dir/flags.make
 functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o: ../functionpass/CountBBinLoops.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o -c /home/ubuntu/bootcamp-2018/day2/functionpass/CountBBinLoops.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o -c /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/CountBBinLoops.cpp
 
 functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.i"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/day2/functionpass/CountBBinLoops.cpp > CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/CountBBinLoops.cpp > CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.i
 
 functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.s"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/day2/functionpass/CountBBinLoops.cpp -o CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/CountBBinLoops.cpp -o CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.s
 
 functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o.requires:
 
@@ -203,16 +203,16 @@ functionpass/CMakeFiles/FunctionPass.dir/CountBBinLoops.cpp.o.provides.build: fu
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o: functionpass/CMakeFiles/FunctionPass.dir/flags.make
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o: ../functionpass/InstrumentFunctions.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o -c /home/ubuntu/bootcamp-2018/day2/functionpass/InstrumentFunctions.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++   $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o -c /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/InstrumentFunctions.cpp
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.i"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/day2/functionpass/InstrumentFunctions.cpp > CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.i
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/InstrumentFunctions.cpp > CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.i
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.s"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/day2/functionpass/InstrumentFunctions.cpp -o CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.s
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && /usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass/InstrumentFunctions.cpp -o CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.s
 
 functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o.requires:
 
@@ -247,8 +247,8 @@ functionpass/libFunctionPass.so: functionpass/CMakeFiles/FunctionPass.dir/CountB
 functionpass/libFunctionPass.so: functionpass/CMakeFiles/FunctionPass.dir/InstrumentFunctions.cpp.o
 functionpass/libFunctionPass.so: functionpass/CMakeFiles/FunctionPass.dir/build.make
 functionpass/libFunctionPass.so: functionpass/CMakeFiles/FunctionPass.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/bootcamp-2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared module libFunctionPass.so"
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FunctionPass.dir/link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Linking CXX shared module libFunctionPass.so"
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/FunctionPass.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 functionpass/CMakeFiles/FunctionPass.dir/build: functionpass/libFunctionPass.so
@@ -266,10 +266,10 @@ functionpass/CMakeFiles/FunctionPass.dir/requires: functionpass/CMakeFiles/Funct
 .PHONY : functionpass/CMakeFiles/FunctionPass.dir/requires
 
 functionpass/CMakeFiles/FunctionPass.dir/clean:
-	cd /home/ubuntu/bootcamp-2018/day2/build/functionpass && $(CMAKE_COMMAND) -P CMakeFiles/FunctionPass.dir/cmake_clean.cmake
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass && $(CMAKE_COMMAND) -P CMakeFiles/FunctionPass.dir/cmake_clean.cmake
 .PHONY : functionpass/CMakeFiles/FunctionPass.dir/clean
 
 functionpass/CMakeFiles/FunctionPass.dir/depend:
-	cd /home/ubuntu/bootcamp-2018/day2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/bootcamp-2018/day2 /home/ubuntu/bootcamp-2018/day2/functionpass /home/ubuntu/bootcamp-2018/day2/build /home/ubuntu/bootcamp-2018/day2/build/functionpass /home/ubuntu/bootcamp-2018/day2/build/functionpass/CMakeFiles/FunctionPass.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2 /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/functionpass /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass /home/ubuntu/bootcamp-2018/github/bootcamp2018/day2/build/functionpass/CMakeFiles/FunctionPass.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : functionpass/CMakeFiles/FunctionPass.dir/depend
 

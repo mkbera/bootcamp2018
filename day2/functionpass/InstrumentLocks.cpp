@@ -23,8 +23,10 @@
 using namespace llvm;
 
 StringRef LockAcqName = "__lock_acq";
+StringRef LockRelName = "__lock_rel";
 
 std::string mtx_lock("pthread_mutex_lock");
+std::string mtx_unlock("pthread_mutex_unlock");
 
 namespace {
 
@@ -53,6 +55,7 @@ struct InstrumentLocks : public FunctionPass {
             errs() << "Function being called: " << name << "\n";
           }
 
+          // mutex lock
           if (name.str() == mtx_lock) {
             if (DEBUG) {
               errs() << "Mutex lock instruction: " << I << "\n";
@@ -68,6 +71,24 @@ struct InstrumentLocks : public FunctionPass {
             CallInst *call =
                 IRB.CreateCall(LockAcq, IRB.CreateGlobalStringPtr(name));
           }
+
+          // mutex unlock
+          if (name.str() == mtx_unlock) {
+            if (DEBUG) {
+              errs() << "Mutex unlock instruction: " << I << "\n";
+            }
+
+            Function *LockRel = M.getFunction(LockRelName);
+            if (!LockRel) {
+              errs() << "Unknown function referenced\n";
+            }
+
+            // Insert call before I
+            IRBuilder<> IRB(&I);
+            CallInst *call =
+                IRB.CreateCall(LockRel, IRB.CreateGlobalStringPtr(name));
+          }
+
         }
       }
     }

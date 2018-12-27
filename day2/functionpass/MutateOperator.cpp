@@ -2,8 +2,8 @@
 // clang prog2.bc -o prog2
 
 // opt -load ./functionpass/libFunctionPass.so -mutateoperator ../progs/prog2.bc
-// > ./prog2.bc
-// clang ./prog2.bc - o prog2
+// > ./prog2v2.bc
+// clang ./prog2v2.bc - o prog2v2
 
 #include "llvm/IR/Function.h"
 #include "llvm/IR/IRBuilder.h"
