@@ -1,0 +1,32 @@
+Task 1
+-----
+
+Implement parallel max finding using pthreads.
+
+Files:  
+
+find_max_serial.c : A single threaded max finding implementation
+
+To compile $makex
+
+Execute:  $./serialmax 100000
+                         |
+                         |
+                       #elements
+
+A partial partial parallel implementation of the program using pthreads is given in 
+find_max_parallel.c. The program should produce an executable similar to the executable 
+file 'findmaxp'.
+
+To run use the following command
+
+$./findmaxp 1000000  4 
+             |       |
+             |       |
+         #elements #threads    
+
+Task 2
+-----
+
+A buggy parallel block hash implementation is given in blockhash.c.
+You are required to fix the issues and generate correct block hashes. 
