@@ -22,6 +22,7 @@ struct thread_param{
                        int size;
                        double max;  
                        int max_index;
+                       int start_index;
 };
 
 
@@ -30,11 +31,37 @@ double function(double element)
     return (sqrt(element) * sin(element));
 }
 
+int find_max_serial(int *array, int size, double *maxval)
+{
+     int ctr, index;
+     *maxval = function(array[0]);
+     index = 0;
+     for(ctr=1; ctr < size; ++ctr){
+           double x = function(array[ctr]);
+           if(x > *maxval){
+                *maxval = x;
+                index = ctr;
+           }
+     }          
+     return index;
+}
+
 void* find_max(void *arg)
 {
      struct thread_param *param = (struct thread_param *) arg;
      (void) param;
-     /*TODO your code*/
+
+     int ctr;
+     param->max = function(param->array[0]);
+     param->max_index = 0;
+     for(ctr=1; ctr < param->size; ++ctr){
+           double x = function(param->array[ctr]);
+           if(x > param->max){
+                param->max = x;
+                param->max_index = ctr;
+           }
+     }          
+
      return NULL;
 }
 
@@ -85,6 +112,7 @@ int main(int argc, char **argv)
             param->size += num_elements % num_threads;    //residue elements
         }
         param->array = a + th_pos;
+        param->start_index = th_pos;
         th_pos += param->size;
         if(pthread_create(&param->tid, NULL, find_max, param) != 0){
               perror("pthread_create");
@@ -99,12 +127,33 @@ int main(int argc, char **argv)
   for(ctr=0; ctr < num_threads; ++ctr){
         struct thread_param *param = params + ctr;
         pthread_join(param->tid, NULL);
-        /*TODO your code*/
+        if(ctr == 0) {
+          max = param->max;
+          max_index = param->max_index;
+          continue;
+        }
+        if (max < param->max) {
+          max = param->max;
+          max_index = param->max_index + param->start_index;
+        }
+
   }
      
+  printf("PARALLEL\n");
   printf("Max = %.2f for %d at index=%d\n", max, a[max_index], max_index);
   gettimeofday(&end, NULL);
   printf("Time taken = %ld microsecs\n", TDIFF(start, end));
+
+  gettimeofday(&start, NULL);
+
+  max = 0.0;
+  ctr = find_max_serial(a, num_elements, &max);
+  gettimeofday(&end, NULL);
+  printf("SERIAL\n");
+  printf("Max = %.2f for %d at index=%d\n", max, a[ctr], ctr);
+  
+  printf("Time taken = %ld microsecs\n", TDIFF(start, end));
+
   free(a);
   free(params);
 }
