@@ -38,10 +38,11 @@ void *hashit(void *arg)
    char *endptr = (char *)arg;   // END pointer
 
    while(1){
-        if(dataptr >= endptr){
-              break;
-        }
         pthread_mutex_lock(&lock);
+        if(dataptr >= endptr){
+          pthread_mutex_unlock(&lock);      
+          break;
+        }
         cptr = dataptr;
         dataptr += BLOCK_SIZE;
         chash = optr;
