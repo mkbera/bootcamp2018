@@ -71,19 +71,67 @@ int readChunk(
     size_t chunkSz = mapStart - chunkStart;
     size_t bytesLeft = chunkSz;
     shared_ptr<block_t> tip;
+    shared_ptr<block_t> first_block;
     uint8_t* chunkPtr = data + chunkStart;
 
     block_map_t bmap;
+    int chunk_len = 0;
     for(int i = 0; bytesLeft > 0; i++) {
+        chunk_len ++;
         shared_ptr<block_t> blk(new block_t());
         size_t bytesParsed = blk->read(chunkPtr, bytesLeft, bmap);
+        bytesLeft -= bytesParsed;
+        chunkPtr += bytesParsed;
+        if (bytesParsed == 0) break;
         (void)bytesParsed;
-        /*TODO   Insert your logic below*/
+        if (i==0)
+          first_block = blk;
+        if (i==0 && !blk->is_coinbase()) {
+          std::shared_ptr<block_t> dummy =  (std::shared_ptr<block_t>)new block_t();
+          dummy->set_balances(init_bal);
+          blk->set_prev_block(dummy);
+        }
+        // else {
+        //   if (bmap.find(blk->prev_hash) == bmap.end()) return 0;
+        //   blk->set_prev_block(bmap[blk->prev_hash]);
+        // }
+        bool blk_valid = blk->validate();
+        bmap[blk->blk_hash] = blk;
+        if (blk_valid == false) {
+          return 0;
+        }
+        tip = blk;
     }
+
+    balance_map_t::iterator itr;
+    balance_map_t last_balance = tip->get_balances();
+    for (itr = last_balance.begin(); itr != last_balance.end(); ++itr) { 
+      hash_result_t key = itr->first;
+      if (final_bal.find(key) == final_bal.end()){ 
+        std::cout << key << " :" << last_balance[key] << "\n";
+        // printf("not find key in final bal\n");
+        return 0;
+      }
+      if (final_bal[key] != last_balance[key]){
+        // printf("final bal neq last bal\n");
+        return 0;
+      } 
+    } 
+
+    pthread_mutex_lock(mutex);
+    tails[tip->blk_hash] = tip;
+    
+
+    if (!first_block->is_coinbase()) {
+      heads.insert(first_block);    
+      
+    }
+    pthread_mutex_unlock(mutex);
+    
+    return chunk_len;
     
     /*TODO Insert into the tail map and return the length*/
     // Return 0 on failure
-    return 0;
 }
 
 void *doReadChunk(void *arg)
@@ -166,6 +214,7 @@ int main(int argc, char* argv[])
     pthread_mutex_destroy(&mutex);
 
     bool valid = true;
+    // std:: cout << "heads " << heads.size() << " " << tails.size() << "\n";
     for (auto p : heads) {
         auto pos = tails.find(p->prev_hash);
         if (pos == tails.end()) {

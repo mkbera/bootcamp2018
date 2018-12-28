@@ -252,6 +252,7 @@ long thmgr_t::launch(long tid)
 
 long thmgr_t::wait(long tid)
 {
+    // printf("enter wait\n");
    assert(tid >= 0 && tid < num_threads);
    struct thread_t *th = threads + tid;
    assert(th->running);
@@ -261,6 +262,7 @@ long thmgr_t::wait(long tid)
    }
    th->running = false;
    th->thfunc = NULL;
+   // printf("exit wait\n");
    return 0;
 }
 
