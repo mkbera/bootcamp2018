@@ -11,6 +11,7 @@
 
 static char *dataptr;
 static unsigned long *optr;
+pthread_mutex_t lock;
 
 
 unsigned long calculate_and_store_hash(char *ptr, char *endptr)
@@ -40,10 +41,12 @@ void *hashit(void *arg)
         if(dataptr >= endptr){
               break;
         }
+        pthread_mutex_lock(&lock);
         cptr = dataptr;
         dataptr += BLOCK_SIZE;
         chash = optr;
         optr++; 
+        pthread_mutex_unlock(&lock);
         /*Perform the real calculation*/
         *chash = calculate_and_store_hash(cptr, endptr); 
    
@@ -58,6 +61,8 @@ int main(int argc, char **argv)
      char *buff;
      unsigned long *hashes;
      pthread_t *threads;
+
+     pthread_mutex_init(&lock, NULL);
 
      struct stat sbuf;
      if(argc != 3){
@@ -128,5 +133,7 @@ int main(int argc, char **argv)
      free((void *)threads);
      munmap(buff, size);
      close(fd);
+
+     pthread_mutex_destroy(&lock);
 }
 
