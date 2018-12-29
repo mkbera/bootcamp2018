@@ -34,7 +34,8 @@ static void fork_callback (struct task_struct *newp)
     if(newp->pid == newp->tgid && pinfo->pid == current->pid) {
       // printk(KERN_INFO "TEST\n");
       struct pt_regs *newp_regs = task_pt_regs(newp);
-      newp_regs->ip = pinfo->error_callback;
+      if (pinfo->is_valid_callback != 0)
+        newp_regs->ip = pinfo->error_callback;
     }
   
     if(newp->pid != newp->tgid && pinfo->pid == current->pid) {
@@ -48,8 +49,9 @@ static void fork_callback (struct task_struct *newp)
         s--;
       }
       stored_key = *((unsigned long *) s);
-      if(stored_key != pinfo->key) {
-        newp_regs->ip = pinfo->error_callback;   
+      if(pinfo->is_valid_key && stored_key != pinfo->key) {
+        if(pinfo->is_valid_callback)
+          newp_regs->ip = pinfo->error_callback;   
       }
     }
 
