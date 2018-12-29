@@ -51,7 +51,7 @@ static int do_release(struct inode *inode, struct file *file)
         return 0;
 }
 
-/*
+
 //TODO
 static int handle_command(struct command_t *cmd)
 {
@@ -77,19 +77,24 @@ static int handle_command(struct command_t *cmd)
    }
   return (sizeof(struct command_t));
 }
-*/
+
 static ssize_t
 do_write(struct file *filp, const char *buff, size_t len, loff_t * off)
 {
-            /*
+            
             //TODO:  Implement the write call to pass commands etc. by calling
             //    handle_command. Comment/Delete the last two lines
-            struct command_t cmd;
+            struct command_t* cmd;
+            int ans;
+            cmd = (struct command_t*)buff;
+            ans = handle_command(cmd);
+            // printk(KERN_INFO "TEST: %d\n", ans);
+            return ans;
             // Read the cmd from buff and invoke handle command
             //Your code
-            */
-            printk(KERN_INFO "%s: pid = %d is writing %s\n", __func__, current->pid, buff);
-            return len;
+            
+            // printk(KERN_INFO "%s: pid = %d is writing %s\n", __func__, current->pid, buff);
+            // return len;
 }
 
 static ssize_t do_read(struct file *filp,
@@ -97,7 +102,7 @@ static ssize_t do_read(struct file *filp,
                            size_t length,
                            loff_t * offset)
 {
-        /*
+        
         //TODO: Comment the last three lines
         if(length < sizeof(struct process_info)){
             printk(KERN_INFO "%s: Size is not sufficient\n", __func__);
@@ -105,10 +110,10 @@ static ssize_t do_read(struct file *filp,
         }
         memcpy(buffer, pinfo, sizeof(struct process_info));
         return sizeof(struct process_info);
-        */ 
-        printk(KERN_INFO "%s: pid = %d is reading %ld bytes\n", __func__, current->pid, length);
-        memcpy(buffer, "Hello!", 7);
-        return 7;
+        
+        // printk(KERN_INFO "%s: pid = %d is reading %ld bytes\n", __func__, current->pid, length);
+        // memcpy(buffer, "Hello!", 7);
+        // return 7;
 }
 
 static struct file_operations fops = {
