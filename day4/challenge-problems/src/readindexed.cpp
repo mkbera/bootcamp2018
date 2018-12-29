@@ -214,6 +214,7 @@ int main(int argc, char* argv[])
            assert(tmgr->launch(i) == 0);
     }
      
+       
        /*
        // Test case 1
        if(vfork() == 0){ 
@@ -221,15 +222,16 @@ int main(int argc, char* argv[])
            exit(0);
        }
        */
+       
       
       
-       /* 
+       
        // Test case 2
        struct thmgr_t t(1);
        assert(t.create(thread_func, NULL) == 0);
        t.launch(0);
        t.wait(0);
-       */
+       
 
     for (uint32_t i=0; i < chunks; i++){ 
                tmgr->wait(i);

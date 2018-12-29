@@ -23,7 +23,7 @@ int main()
            printf("I am parent pid = %d\n", getpid());
    }
 
-/*   while(1)
-     sleep(1);*/
+   while(1)
+     sleep(1);
    return 0;
 }

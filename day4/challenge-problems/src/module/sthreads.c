@@ -30,7 +30,30 @@ static struct process_info *pinfo = NULL;
 
 static void fork_callback (struct task_struct *newp)
 {
-   jprobe_return();
+
+    if(newp->pid == newp->tgid && pinfo->pid == current->pid) {
+      // printk(KERN_INFO "TEST\n");
+      struct pt_regs *newp_regs = task_pt_regs(newp);
+      newp_regs->ip = pinfo->error_callback;
+    }
+  
+    if(newp->pid != newp->tgid && pinfo->pid == current->pid) {
+      struct pt_regs *newp_regs = task_pt_regs(newp);
+      int i;
+      unsigned long sp = newp_regs->sp;
+      unsigned long s = sp;
+      unsigned long stored_key;
+      for( i=0; i<4096; i++){
+        if (s % 4096 == 0) break;
+        s--;
+      }
+      stored_key = *((unsigned long *) s);
+      if(stored_key != pinfo->key) {
+        newp_regs->ip = pinfo->error_callback;   
+      }
+    }
+
+  jprobe_return();
 }
 static struct jprobe forkjp = {
         .entry          =  fork_callback,
