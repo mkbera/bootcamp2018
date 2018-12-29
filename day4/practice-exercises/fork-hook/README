@@ -1,0 +1,71 @@
+BUILD AND INSTALL module
+------------------------
+
+$cd module
+$make
+$sudo dmesg -c
+$sudo insmod sthreads.ko
+
+$sudo dmesg   // Observe the logs
+
+USER PROGRAM (fork.c)
+-----------
+$cd fork-hook
+$gcc fork.c -o fork
+$./fork
+
+Check the kernel logs 'dmesg' and try to make the connection to our program
+
+Unload the module: $sudo rmmod sthreads
+
+$cd module
+
+- Remove the comments (with comment 1 legend) in fork_callback function.
+$make
+$sudo dmesg -c
+$sudo insmod sthreads.ko
+
+$cd fork-hook
+
+Remove the comments from fork.c file
+
+$gcc fork.c -o fork
+$./fork &
+$ps
+$dmesg   // Observe the new logs
+
+$cat /proc/[pid of parent]/maps   //Find the address in dmesg logs 
+$cat /proc/[pid of child]/maps    //Find the address in the dmesg logs
+ 
+$kill -9 [child pid]
+$kill -9 [parent pid]
+$sudo dmesg -c
+
+USER PROGRAM (pthread.c)
+--------------------------
+
+$cd fork-hook
+$gcc pthread.c -o pthread -lpthread
+$./pthread
+$dmesg  // Observe the logs, notice the difference between process creation and child creation
+
+Unload the module: $sudo rmmod sthreads
+$sudo dmesg -c
+
+$cd module
+
+- Remove all the remaining comments in fork_callback function.
+$make
+$sudo dmesg -c
+$sudo insmod sthreads.ko
+
+$cd fork-hook
+
+Remove the comments from pthread.c file and comment the line containing pthread_create (old)
+
+$gcc pthread.c -o pthread -lpthread
+$./pthread
+$dmesg  // Observe the logs, notice the stack pointer value printed in user space and kernel dmesg logs
+
+
+Congratulations!   You are all set.

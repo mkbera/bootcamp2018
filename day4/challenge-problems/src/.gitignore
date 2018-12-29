@@ -1,0 +1,9 @@
+*.o
+*.idx
+*.dat
+*.swp
+cryptotest
+genchain
+readchain
+readindexed
+rewritechain

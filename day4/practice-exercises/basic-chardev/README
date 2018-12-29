@@ -1,0 +1,41 @@
+BUILD AND INSTALL module
+------------------------
+
+$cd module
+$make
+$sudo dmesg -c
+$sudo insmod sthreads.ko
+
+Check the kernel logs 'dmesg' 
+
+USER PROGRAM (simple.c)
+-----------
+$cd basic_chardev
+$gcc simple.c -o simple
+$./simple
+
+Check the kernel logs 'dmesg' and try to make the connection between user space syscalls (open, read, write etc.) with the log messages.
+
+Unload the module: $sudo rmmod sthreads
+
+TODO  (todo.c)
+--------------
+
+$cd module
+Uncomment the code segments containing TODO
+and comment the old read/write implementations.
+
+Modify the code (do_write) as instructed in the comments.
+You are required to implement the commands and updates to pinfo structure inside the module
+ 
+$cd basic_chardev
+$gcc todo.c -o todo
+$./todo
+
+Sample output
+
+-----------------------
+My PID is 9036 ADDR[print_pinfo] = 0x400786
+pid = 9036 is_valid_key = 0 key=0 is_valid_callback = 0 error_callback=0
+pid = 9036 is_valid_key = 1 key=199999 is_valid_callback = 1 error_callback=400786
+----------------------
