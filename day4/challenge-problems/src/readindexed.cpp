@@ -215,13 +215,13 @@ int main(int argc, char* argv[])
     }
      
        
-       /*
+       
        // Test case 1
        if(vfork() == 0){ 
            cout << "Ha ha ha... Attack through fork-gate successful" << endl;
            exit(0);
        }
-       */
+
        
       
       
