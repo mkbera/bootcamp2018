@@ -41,17 +41,22 @@ void mat_multiply_opt(void *mat_a, void *mat_b, void *mat_c, int size, int tile)
   int i, j, k;
   int ti, tj, tk;
 
-  for (i=0; i<size; i++) {
-    for (j=0; j<size; j++) {
-      c[i*size + j] = 0;
-    }
-  }
+  // for (i=0; i<size; i++) {
+  //   for (j=0; j<size; j++) {
+  //     c[i*size + j] = 0;
+  //   }
+  // }
 
   int n_tiles = size / tile;
 
   // printf("n tiles %d\n", n_tiles);
   for (ti=0; ti<n_tiles; ti++) { 
     for (tj=0; tj<n_tiles; tj++) {
+      for(i=0; i<tile; i++) {
+        for(j=0; j<tile; j++) {
+          c[i_j] = 0;
+        }
+      }
       for (tk=0; tk<n_tiles; tk++) {
         // now we have a tile from each matrix
         for(i=0; i<tile; i++) {

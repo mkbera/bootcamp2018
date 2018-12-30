@@ -5,7 +5,7 @@
 #include "matrix.h"
 #include "testing.h"
 
-#define SIZE 1000
+#define SIZE 1024
 #define scalar 2.0
 #define SORT_TILE 512 //represents sortng tile size value.
 
